@@ -14,38 +14,38 @@ import java.util.logging.Logger;
 public class Routers {
 
 	private static final Logger LOGGER = Logger.getLogger(Routers.class.getName());
-	private List<Route> routes = new ArrayList<Route>();
+	private List<Router> routers = new ArrayList<Router>();
 	
 	public Routers() {
 	}
 	
-	public void addRoute(List<Route> routes){
-		routes.addAll(routes);
+	public void addRouters(List<Router> routers){
+		routers.addAll(routers);
 	}
 	
-	public void addRoute(Route route){
-		routes.add(route);
+	public void addRouter(Router router){
+		routers.add(router);
 	}
 	
-	public void removeRoute(Route route){
-		routes.remove(route);
+	public void removeRouter(Router router){
+		routers.remove(router);
 	}
 	
-	public void addRoute(String path, Method action, Object controller){
-		Route route = new Route();
-		route.setPath(path);
-		route.setAction(action);
-		route.setController(controller);
+	public void addRouter(String path, Method action, Object controller){
+		Router router = new Router();
+		router.setPath(path);
+		router.setAction(action);
+		router.setController(controller);
 		
-		routes.add(route);
-		LOGGER.info("Add Route：[" + path + "]");
+		routers.add(router);
+		LOGGER.info("Add Router：[" + path + "]");
 	}
 
-	public List<Route> getRoutes() {
-		return routes;
+	public List<Router> getRouters() {
+		return routers;
 	}
 
-	public void setRoutes(List<Route> routes) {
-		this.routes = routes;
+	public void setRouters(List<Router> routers) {
+		this.routers = routers;
 	}
 }

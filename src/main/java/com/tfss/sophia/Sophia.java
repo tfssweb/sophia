@@ -73,7 +73,7 @@ public class Sophia {
 	}
 	
 	public Sophia addRoutes(Routers routers){
-		this.routers.addRoute(routers.getRoutes());
+		this.routers.addRouters(routers.getRouters());
 		return this;
 	}
 
@@ -91,7 +91,7 @@ public class Sophia {
 	public Sophia addRoute(String path, String methodName, Object controller){
 		try {
 			Method method = controller.getClass().getMethod(methodName, Request.class, Response.class);
-			this.routers.addRoute(path, method, controller);
+			this.routers.addRouter(path, method, controller);
 		} catch (NoSuchMethodException e) {
 			e.printStackTrace();
 		} catch (SecurityException e) {

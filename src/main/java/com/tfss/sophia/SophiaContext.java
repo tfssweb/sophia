@@ -5,10 +5,15 @@ import javax.servlet.ServletContext;
 import com.tfss.sophia.servlet.Request;
 import com.tfss.sophia.servlet.Response;
 
-
+/**
+ * 获取上下文
+ * @author poxiao
+ *
+ */
 
 public class SophiaContext {
-private static final ThreadLocal<SophiaContext> CONTEXT = new ThreadLocal<SophiaContext>();
+	
+	private static final ThreadLocal<SophiaContext> CONTEXT = new ThreadLocal<SophiaContext>();
 	
 	private ServletContext context;
 	private Request request;

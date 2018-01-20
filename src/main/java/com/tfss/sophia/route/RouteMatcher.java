@@ -17,13 +17,13 @@ import com.tfss.sophia.util.PathUtil;
  *
  */
 public class RouteMatcher {
-	private List<Route> routes;
+	private List<Router> routes;
 
-	public RouteMatcher(List<Route> routes) {
+	public RouteMatcher(List<Router> routes) {
 		this.routes = routes;
 	}
 	
-	public void setRoutes(List<Route> routes) {
+	public void setRoutes(List<Router> routes) {
 		this.routes = routes;
 	}
 	
@@ -32,10 +32,10 @@ public class RouteMatcher {
 	 * @param path	请求地址
 	 * @return		返回查询到的路由
 	 */
-	public Route findRoute(String path) {
+	public Router findRoute(String path) {
 		String cleanPath = parsePath(path);
-		List<Route> matchRoutes = new ArrayList<Route>();
-		for (Route route : this.routes) {
+		List<Router> matchRoutes = new ArrayList<Router>();
+		for (Router route : this.routes) {
 			if (matchesPath(route.getPath(), cleanPath)) {
 				matchRoutes.add(route);
 			}
@@ -46,10 +46,10 @@ public class RouteMatcher {
         return matchRoutes.size() > 0 ? matchRoutes.get(0) : null;
 	}
 	
-	private void giveMatch(final String uri, List<Route> routes) {
-		Collections.sort(routes, new Comparator<Route>() {
+	private void giveMatch(final String uri, List<Router> routes) {
+		Collections.sort(routes, new Comparator<Router>() {
 			@Override
-			public int compare(Route o1, Route o2) {
+			public int compare(Router o1, Router o2) {
 				if (o2.getPath().equals(uri)) {
 					return o2.getPath().indexOf(uri);
 				}

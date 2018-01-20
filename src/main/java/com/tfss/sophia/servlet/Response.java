@@ -10,35 +10,35 @@ import com.tfss.sophia.Sophia;
 import com.tfss.sophia.render.Render;
 
 /**
- * HttpServletResponse增强
+ * HttpServletResponse增强类
  * @author tfss
  *
  */
 public class Response {
 
-private HttpServletResponse raw;
+	private HttpServletResponse response;
 	
 	private Render render = null;
 	
 	public Response(HttpServletResponse httpServletResponse) {
-		this.raw = httpServletResponse;
-		this.raw.setHeader("Framework", "Mario");
+		this.response = httpServletResponse;
+		this.response.setHeader("Framework", "sophia");
 		this.render = Sophia.me().getRender();
 	}
 	
 	public void text(String text) {
-		raw.setContentType("text/plan;charset=UTF-8");
+		response.setContentType("text/plan;charset=UTF-8");
 		this.print(text);
 	}
 
 	public void html(String html) {
-		raw.setContentType("text/html;charset=UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		this.print(html);
 	}
 	
 	private void print(String str){
 		try {
-			OutputStream outputStream = raw.getOutputStream();
+			OutputStream outputStream = response.getOutputStream();
 			outputStream.write(str.getBytes());
 			outputStream.flush();
 			outputStream.close();
@@ -49,11 +49,11 @@ private HttpServletResponse raw;
 	
 	public void cookie(String name, String value){
 		Cookie cookie = new Cookie(name, value);
-		raw.addCookie(cookie);
+		response.addCookie(cookie);
 	}
 	
 	public HttpServletResponse getRaw() {
-		return raw;
+		return response;
 	}
 	
 	public void render(String view) {
@@ -62,7 +62,7 @@ private HttpServletResponse raw;
 
 	public void redirect(String location) {
 		try {
-			raw.sendRedirect(location);
+			response.sendRedirect(location);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

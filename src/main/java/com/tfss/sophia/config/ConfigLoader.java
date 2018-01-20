@@ -11,7 +11,7 @@ import java.util.Set;
 
 public class ConfigLoader {
 
-private Map<String, Object> configMap;
+	private Map<String, Object> configMap;
 	
 	public ConfigLoader() {
 		this.configMap = new HashMap<String, Object>();

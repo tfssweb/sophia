@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.tfss.sophia.route.Router;
-import com.tfss.sophia.route.RouteMatcher;
+import com.tfss.sophia.route.RouterAdapter;
 import com.tfss.sophia.route.Routers;
 import com.tfss.sophia.servlet.Request;
 import com.tfss.sophia.servlet.Response;
@@ -33,7 +33,7 @@ public class SophiaFilter implements Filter{
 
 	private static final Logger LOGGER = Logger.getLogger(SophiaFilter.class.getName());
 	
-	private RouteMatcher routeMatcher = new RouteMatcher(new ArrayList<Router>());
+	private RouterAdapter routerAdapter = new RouterAdapter(new ArrayList<Router>());
 	
 	private ServletContext servletContext;
 	
@@ -48,7 +48,7 @@ public class SophiaFilter implements Filter{
 			
 			Routers routers = sophia.getRouters();
 			if(null != routers){
-				routeMatcher.setRoutes(routers.getRouters());
+				routerAdapter.setRoutes(routers.getRouters());
 			}
 			servletContext = filterConfig.getServletContext();
 			
@@ -85,7 +85,7 @@ public class SophiaFilter implements Filter{
         
         LOGGER.info("Request URI：" + uri);
         
-        Router route = routeMatcher.findRoute(uri);
+        Router route = routerAdapter.findRoute(uri);
         
         // 如果找到
 		if (route != null) {

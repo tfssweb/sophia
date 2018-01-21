@@ -16,10 +16,10 @@ import com.tfss.sophia.util.PathUtil;
  * @author tfss
  *
  */
-public class RouteMatcher {
+public class RouterAdapter {
 	private List<Router> routes;
 
-	public RouteMatcher(List<Router> routes) {
+	public RouterAdapter(List<Router> routes) {
 		this.routes = routes;
 	}
 	

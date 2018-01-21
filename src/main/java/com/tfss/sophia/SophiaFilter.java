@@ -15,9 +15,9 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.tfss.sophia.route.Router;
-import com.tfss.sophia.route.RouterAdapter;
-import com.tfss.sophia.route.Routers;
+import com.tfss.sophia.router.Router;
+import com.tfss.sophia.router.RouterAdapter;
+import com.tfss.sophia.router.Routers;
 import com.tfss.sophia.servlet.Request;
 import com.tfss.sophia.servlet.Response;
 import com.tfss.sophia.util.PathUtil;

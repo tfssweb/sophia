@@ -1,4 +1,4 @@
-package com.tfss.sophia.route;
+package com.tfss.sophia.router;
 
 import java.net.URI;
 import java.net.URISyntaxException;

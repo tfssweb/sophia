@@ -1,4 +1,4 @@
-package com.tfss.sophia.route;
+package com.tfss.sophia.router;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

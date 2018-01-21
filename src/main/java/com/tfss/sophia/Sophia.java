@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import com.tfss.sophia.config.ConfigLoader;
 import com.tfss.sophia.render.JspRender;
 import com.tfss.sophia.render.Render;
-import com.tfss.sophia.route.Routers;
+import com.tfss.sophia.router.Routers;
 import com.tfss.sophia.servlet.Request;
 import com.tfss.sophia.servlet.Response;
 
@@ -88,7 +88,7 @@ public class Sophia {
 	 * @param controller	控制器对象
 	 * @return				返回Mario
 	 */
-	public Sophia addRoute(String path, String methodName, Object controller){
+	public Sophia addRouter(String path, String methodName, Object controller){
 		try {
 			Method method = controller.getClass().getMethod(methodName, Request.class, Response.class);
 			this.routers.addRouter(path, method, controller);

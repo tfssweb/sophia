@@ -70,7 +70,7 @@ public class SophiaFilter implements Filter{
 				e.printStackTrace();
 			}
 		}
-		throw new RuntimeException("init bootstrap class error!");
+		throw new RuntimeException("init bootstrap class error, please add the initialization parameter 'bootstrap' to web.xml");
 	}
 	
 	@Override

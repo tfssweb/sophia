@@ -53,5 +53,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+	  <!--maven打包后的名称  -->
+	  <finalName>com.tfss.sophia</finalName>
 	</build>
 </project>
